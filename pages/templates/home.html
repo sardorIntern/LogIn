@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 style="color: gray">Homepage</h2>
+
+{% if request.user.is_authenticated %}
+{{ request.user }}  {{ request.user.is_authenticated }}
+
+<a href="books/new">Go to Books page</a>
+<a href="news/new">Go to News page</a>
+{% endif %}
+{% endblock content %}
+
+
+
+

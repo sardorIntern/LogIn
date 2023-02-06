@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 style="color: green">Press link below to add new book</h1>
+
+<form method="post"> {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Add new book">
+</form><br>
+
+<ul>
+    {% for book in object_list %}
+        <li>{{ book.title }} <p>written by</p> {{ book.author }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
