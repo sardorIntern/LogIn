@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<h1 style="color: green">Press link below to add new book</h1>
+<body style="margin: 0; padding: 0; background-color: papayawhip">
+<div style="max-width: max-content; margin: 200 auto;">
+<h1 style="color: seagreen">Press link below to add new book</h1>
 
 <form method="post"> {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Add new book">
+    <input type="submit" value="Add new book" style="background-color: lightseagreen; color: white;
+border-radius: 3px;">
 </form><br>
 
 <ul>
@@ -14,5 +16,6 @@
         <li>{{ book.title }} <p>written by</p> {{ book.author }}</li>
     {% endfor %}
 </ul>
-
+</div>
+</body>
 {% endblock content %}

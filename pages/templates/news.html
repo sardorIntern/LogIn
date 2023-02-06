@@ -2,11 +2,13 @@
 
 {% block content %}
 
-<h1 style="color: gray">Press link below to add news</h1>
+<body style="margin: 0; padding: 0; background-color: lightsteelblue">
+<div style="max-width: max-content; margin: 160px auto;">
+<h1 style="color: mediumblue">Press link below to add news</h1>
 
 <form method="post"> {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Add news">
+    <input type="submit" value="Add news" style="background-color: mediumslateblue; color: white; border-radius: 3px;">
 </form><br>
 
 <ul>
@@ -15,5 +17,6 @@
     {{ new.text }}
     {% endfor %}
 </ul>
-
+</div>
+</body>
 {% endblock content %}
